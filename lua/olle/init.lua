@@ -1,4 +1,3 @@
-require('olle.remap')
 require('olle.set')
 
 -- install lazy
