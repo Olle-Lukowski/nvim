@@ -76,6 +76,7 @@ return {
         ensure_installed = {
           'lua_ls',
           'rust_analyzer',
+          'clangd',
         },
         handlers = {
           lsp_zero.default_setup,
