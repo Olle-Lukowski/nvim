@@ -77,6 +77,7 @@ return {
           'lua_ls',
           'rust_analyzer',
           'clangd',
+          'wgsl_analyzer',
         },
         handlers = {
           lsp_zero.default_setup,
