@@ -78,6 +78,9 @@ return {
           'rust_analyzer',
           'clangd',
           'wgsl_analyzer',
+          'elixirls',
+          'jedi_language_server',
+          'zls',
         },
         handlers = {
           lsp_zero.default_setup,
