@@ -1,22 +1,47 @@
 return {
-  'nvim-telescope/telescope-file-browser.nvim',
+  'nvim-tree/nvim-tree.lua',
   dependencies = {
-    'nvim-telescope/telescope.nvim',
-    'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons'
   },
+  lazy = false,
   config = (function()
-    require('telescope').setup({
-      extensions = {
-        file_browser = {
-          hijack_netrw = true,
-          auto_depth = true,
-        }
-      }
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+
+    vim.opt.termguicolors = true
+
+    local HEIGHT_RATIO = 0.8
+    local WIDTH_RATIO = 0.5
+
+    require('nvim-tree').setup({
+      view = {
+        float = {
+          enable = true,
+          open_win_config = function()
+            local screen_w = vim.opt.columns:get()
+            local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+            local window_w = screen_w * WIDTH_RATIO
+            local window_h = screen_h * HEIGHT_RATIO
+            local window_w_int = math.floor(window_w)
+            local window_h_int = math.floor(window_h)
+            local center_x = (screen_w - window_w) / 2
+            local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+            return {
+              border = 'rounded',
+              relative = 'editor',
+              row = center_y,
+              col = center_x,
+              width = window_w_int,
+              height = window_h_int,
+            }
+          end
+        },
+        width = function()
+          return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+        end,
+      },
     })
 
-    require('telescope').load_extension('file_browser')
-
-    vim.keymap.set('n', '<leader>pv', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
+    vim.keymap.set('n', '<leader>pv', ':NvimTreeToggle<cr>', { noremap = true })
   end)
 }
