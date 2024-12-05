@@ -12,5 +12,16 @@ return {
         desc = 'Buffer Local Keymaps (which-key)',
       },
     },
+    config = function(_, opts)
+      local wk = require 'which-key'
+      wk.setup(opts)
+      wk.add {
+        {
+          '<leader>p',
+          group = 'Pick',
+          icon = { cat = 'filetype', name = 'minipick' },
+        },
+      }
+    end,
   },
 }
