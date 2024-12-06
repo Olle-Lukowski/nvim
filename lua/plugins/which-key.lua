@@ -19,7 +19,6 @@ return {
         {
           '<leader>p',
           group = 'Pick',
-          icon = { cat = 'filetype', name = 'minipick' },
         },
       }
     end,
