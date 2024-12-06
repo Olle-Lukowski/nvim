@@ -20,6 +20,10 @@ return {
           '<leader>p',
           group = 'Pick',
         },
+        {
+          '<leader>s',
+          group = 'Select',
+        },
       }
     end,
   },
