@@ -2,6 +2,7 @@
   "catppuccin": { "branch": "main", "commit": "faf15ab0201b564b6368ffa47b56feefc92ce3f4" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "lazy.nvim": { "branch": "main", "commit": "3388a26417c48b15d5266d954f62a4d47fe99490" },
+  "mini.files": { "branch": "main", "commit": "84efb81e5207ae8c41f54abdafb79c6212fc0971" },
   "mini.icons": { "branch": "main", "commit": "54686be7d58807906cb2c8c2216e0bf9c044f19a" },
   "mini.pick": { "branch": "main", "commit": "75e9a0a7808aa772ca5e31d479ffd0280ab6bf74" },
   "neogit": { "branch": "master", "commit": "11e14b67eb19bada54c9eb8bc70a581f358cd175" },
